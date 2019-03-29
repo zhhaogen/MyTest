@@ -1,10 +1,11 @@
 language: java
-before_deploy: "date +%F' '%T"
-script:gradle jar
+before_deploy: 
+  - echo $(date +%F' '%T)
+  - ls build/libs/
 deploy:
   provider: releases
-  api_key: ${GITHUB_TOKEN}
+  api_key: build/libs/*.jar
   file: "FILE TO UPLOAD"
   skip_cleanup: true
   on:
-    tags: true
+    branch: master

@@ -1,1 +1,8 @@
 language: java
+deploy:
+  provider: releases
+  api_key: ${GITHUB_TOKEN}
+  file: "FILE TO UPLOAD"
+  skip_cleanup: true
+  on:
+    tags: true

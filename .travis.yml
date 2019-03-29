@@ -1,5 +1,6 @@
 language: java
 before_deploy: "date +%F' '%T"
+script:gradle jar
 deploy:
   provider: releases
   api_key: ${GITHUB_TOKEN}

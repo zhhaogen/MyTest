@@ -4,8 +4,8 @@ before_deploy:
   - ls build/libs/
 deploy:
   provider: releases
-  api_key: build/libs/*.jar
-  file: "FILE TO UPLOAD"
+  api_key: ${GITHUB_TOKEN}
+  file: build/libs/*.jar
   skip_cleanup: true
   on:
     branch: master

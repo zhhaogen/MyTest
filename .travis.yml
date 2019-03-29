@@ -2,10 +2,11 @@ language: java
 before_deploy: 
   - echo $(date +%F' '%T)
   - ls build/libs/
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
+  - echo $TRAVIS_TAG
+  #- git tag $TRAVIS_TAG
 deploy:
   provider: releases
   api_key: ${GITHUB_TOKEN}
   file: build/libs/*.jar
   skip_cleanup: true
-  on:
-    branch: master

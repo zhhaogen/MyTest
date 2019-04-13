@@ -4,6 +4,8 @@
  */
 package cn.zhg.mytest;
 
+import java.util.Arrays;
+
 /**
  * @author zhhaogen
  *
@@ -16,7 +18,7 @@ public class Main
 	 */
 	public static void main(String[] args)
 	{
-
+		System.out.println(Arrays.toString(args));
 	}
 
 }
